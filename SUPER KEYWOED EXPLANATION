@@ -1,0 +1,20 @@
+class one{
+    public one(){
+        System.out.println("hello");
+    }
+    public void ho(){
+        System.out.println("interger:"+5);
+    }
+}
+public class two extends one{
+    public  two(){  //one constructor can be only called by another constructor in inheritance.
+        super();
+    }
+    public void sk(){
+       super.ho();//using super we can call the method of parent class.
+    }
+    public static void main(String[] argv){
+        two o=new two();
+        o.ho();
+    }
+}
