@@ -1,0 +1,112 @@
+import java.util.Scanner;
+interface payout_salary{
+    public void payouttt(int intt);
+}
+interface pay{
+    public void Payable();
+}
+class displayDetails{
+    String name;
+    int age;
+    public void displayDetails(String s,int i){
+        name=s;
+        age=i;
+    }
+}
+class student extends displayDetails{//student
+    int studentId;
+    String grade;
+    public void displayDetails(String s,int i,int j,String c){
+        super.displayDetails(s,i);
+        studentId=j;
+        grade=c;
+        System.out.println("name:"+name);
+        System.out.println("age:"+age);
+        System.out.println("studentId:"+studentId);
+        System.out.println("grade:"+grade);
+    }
+}
+class teacher extends displayDetails{//teacher
+    int employeeId;
+    String subject;
+    public void displayDetails(String s,int i,int m,String w){
+        super.displayDetails(s,i);
+        employeeId=m;
+        subject=w;
+        System.out.println("name:"+name);
+        System.out.println("age:"+age);
+        System.out.println("employeeId:"+employeeId);
+        System.out.println("subject:"+subject);
+    }
+    
+}
+class payout implements payout_salary{//pay salary
+    int salary=5000;
+    public void payouttt(int intt){
+        int fes=intt*200;
+        int fees=salary+fes;
+        System.out.println("salary:"+fees);
+    }
+}
+public class test{
+    int experience;
+    public void stud(){//student
+              Scanner sc=new Scanner(System.in);//object of scanner
+          System.out.println("ENTER STUDENT DETAIL:");
+          System.out.print("enter student name:");
+        String namee=sc.nextLine();
+          System.out.print("enter student age:");        
+        int agee=sc.nextInt();
+          System.out.print("enter student id:"); 
+        int studentidd=sc.nextInt();     
+          System.out.print("enter student grade:");
+          sc.nextLine();
+        String gradee=sc.nextLine();
+              student st=new student();//object of student class
+        System.out.println("-------DETAIL--------");      
+        st.displayDetails(namee,agee,studentidd,gradee);
+    }
+    public void teac(){//teacher
+              Scanner sc=new Scanner(System.in);//object if scanner
+          System.out.println("ENTER TEACHER DETAIL:");
+          System.out.print("enter teacher name:");
+        String namee=sc.nextLine();
+          System.out.print("enter teacher age:");        
+        int agee=sc.nextInt();
+          System.out.print("enter teacher id:"); 
+        int employeeId=sc.nextInt();     
+          System.out.print("enter  subject:");
+        sc.nextLine();
+        String subject=sc.nextLine();
+              teacher st=new teacher();//object of student class
+                System.out.println("-------DETAIL--------");      
+        st.displayDetails(namee,agee, employeeId,subject);
+    }    
+    public void payoutt(){//salary pay
+        System.out.println("enter age of experience");
+        Scanner s=new Scanner(System.in);
+        experience=s.nextInt();
+        payout pi=new payout();
+        pi.payouttt(experience);
+    }    
+    public static void main(String[] argv){
+        System.out.println("want to enter student detail(1) (or) teacher detail(2) (or) view teacher salary(3) :");
+        Scanner scan=new Scanner(System.in);
+        int output=scan.nextInt();
+        if (output==1){
+            test t=new test();
+            t.stud();
+        }
+        else if(output==2){
+            test te =new test();
+            te.teac();
+        }
+        else if(output==3){
+        test p=new test();
+        p.payoutt();
+        }
+        else{
+            System.out.println("invalid input");
+        }
+    }
+}
