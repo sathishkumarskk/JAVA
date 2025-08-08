@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.File;
+class own_exception extends Exception{
+    public own_exception(String message){
+    super(message);
+    }
+}
+public class test{
+    public static void age(int a) throws Exception{
+        if (a<18){
+            throw new own_exception("not eligible for voting");
+        }
+        else{
+            System.out.println("elibible for voting");
+        }
+    }
+    public static void main(String[] argv){
+    try{
+        age(15);
+    }
+    catch(Exception e){
+        System.out.println("error:"+e.getMessage());
+    }
+    }
+}
