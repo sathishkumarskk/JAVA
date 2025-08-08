@@ -1,0 +1,24 @@
+class myexception extends Exception{
+    public myexception(String message){
+        super(message);
+    }
+}
+public class Main{
+    public static void age(int a) throws Exception{
+        if (a<18)
+        {
+            throw new myexception("not eligible for voting");
+        }
+        else{
+            System.out.println("eligible for voting");
+        }
+    }
+        public static void main(String[] argv){
+        try{
+            age(15);
+        }
+        catch(Exception e){
+            System.out.println("error:"+e.getMessage());
+        }
+        }
+}
