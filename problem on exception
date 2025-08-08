@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class sk{
+    public static void main(String[] argv){
+            Scanner s=new Scanner(System.in); 
+        try{
+        System.out.println("enter numerator");
+        int n=s.nextInt();
+        System.out.println("enter denominator");        
+        int d=s.nextInt();
+        System.out.println("divition:"+n/d);
+            try{
+                System.out.println("enter size of array");
+            int size=s.nextInt();
+            int[] arr=new int[size];
+            System.out.println(arr[5]);
+            }
+            catch(ArrayIndexOutOfBoundsException e){
+                System.out.println("array index out of range");
+            }        
+        }
+        catch(ArithmeticException e){
+            System.out.println("zero divition error");
+        }
+        catch(InputMismatchException e){
+            System.out.println("wrong type input given");
+        }
+        finally{
+            System.out.println("end of program-cleaning the resources");
+        }
+    }
+}
