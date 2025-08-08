@@ -1,0 +1,11 @@
+public class sk{
+    public static void main(String[] argv){
+        try{
+            String a="sasth";
+            int num=Integer.parseInt(a);
+        }
+        catch(NumberFormatException k){
+            System.out.println("string cannot converted into string");
+        }
+    }
+}
