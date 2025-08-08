@@ -1,0 +1,12 @@
+import java.io.File;
+public class delete_file{
+    public static void main(String[] argv){
+        File obj=new File("sathish.txt");
+        if (obj.delete()){
+            System.out.println("delete file name"+obj.getName());
+        }
+        else{
+            System.out.println("failed to delete");
+        }
+    }
+}
